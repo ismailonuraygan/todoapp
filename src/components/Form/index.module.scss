@@ -1,0 +1,32 @@
+.todoForm {
+  width: 72%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  gap: 12px;
+  input {
+    width: 90%;
+    flex-shrink: 1;
+  }
+  button {
+    border: none;
+    padding: 12px 16px;
+    border-radius: 6px;
+    background-color: rgb(0, 166, 255);
+    cursor: pointer;
+    color: aliceblue;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .todoForm {
+    width: 90%;
+    flex-direction: column;
+    button {
+      width: 100%;
+    }
+    input {
+      width: 100%;
+    }
+  }
+}
