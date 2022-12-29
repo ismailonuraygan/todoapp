@@ -2,7 +2,9 @@ import React from "react";
 import Todo from "../Todo/Todo";
 import styles from "./index.module.scss";
 
-const TodoList = ({ todos }) => {
+
+const TodoList = ({todos}) => {
+
   return (
     <div className={styles.wrapper}>
       <div>
