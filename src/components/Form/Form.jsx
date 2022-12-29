@@ -38,6 +38,7 @@ const Form = () => {
         }}
         className={styles.todoInput}
         value={todo.content}
+        placeholder="Add Todo"
       />
       <button>Add</button>
     </form>

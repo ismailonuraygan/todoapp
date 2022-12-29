@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import clsx from "clsx";
 import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Todo = ({ todo }) => {
   const [isCompleted, setIsCompleted] = useState(false);
@@ -20,17 +20,17 @@ const Todo = ({ todo }) => {
   });
 
   return (
-    <div className={"todoRow"}>
+    <div className={styles.todoRow}>
       <div className={content} onClick={() => setIsCompleted(!isCompleted)}>
         {todo.content}
       </div>
       <div
-        className="icons"
+        className={styles.icons}
         onClick={() => {
           handleDelete(todo.id);
         }}
       >
-        <DeleteIcon className="delete" />
+        <DeleteIcon className={styles.delete} />
       </div>
     </div>
   );

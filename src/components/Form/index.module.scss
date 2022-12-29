@@ -1,11 +1,12 @@
 .todoForm {
-  width: 72%;
+  width: 70%;
   display: flex;
   justify-content: center;
   margin-bottom: 24px;
   gap: 12px;
   input {
     width: 90%;
+    padding: 6px;
     flex-shrink: 1;
   }
   button {
@@ -20,7 +21,7 @@
 
 @media screen and (max-width: 600px) {
   .todoForm {
-    width: 90%;
+    width: 100%;
     flex-direction: column;
     button {
       width: 100%;
