@@ -1,4 +1,4 @@
-import "./App.scss";
+import "./styles/App.scss";
 import { useState, useEffect } from "react";
 import TodoList from "./components/TodoList/TodoList";
 import Form from "./components/Form/Form";
