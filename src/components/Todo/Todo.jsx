@@ -1,39 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { useTodoLayerValue } from "../../context/TodoContext";
+import axios from "axios";
 import "./index.scss";
 
 const Todo = ({ todo }) => {
-  const [{}, dispatch] = useTodoLayerValue();
+  const [isCompleted, setIsCompleted] = useState(false);
 
-  const removeTodo = (todoId) => {
-    dispatch({
-      type: "REMOVE_TODO",
-      payload: todoId,
-    });
-  };
-  const completeTodo = (todoId) => {
-    dispatch({
-      type: "COMPLETE_TODO",
-      payload: todoId,
-    });
+  const handleDelete = (id) => {
+    axios
+      .delete(`https://630f2d283792563418893c3d.mockapi.io/todos/${id}`)
+      .then(() => window.location.reload());
+    console.log("deleted");
   };
 
-  const todoRow = clsx({
-    ["todoRow"]: true,
-    ["completed"]: todo.isCompleted
-  })
+  const content = clsx({
+    ["content"]: true,
+    ["completed"]: isCompleted,
+  });
 
   return (
-    <div className={todoRow}>
-      <div className="content" onClick={() => completeTodo(todo.id)}>
+    <div className={"todoRow"}>
+      <div className={content} onClick={() => setIsCompleted(!isCompleted)}>
         {todo.content}
       </div>
       <div
         className="icons"
         onClick={() => {
-          removeTodo(todo.id);
+          handleDelete(todo.id);
         }}
       >
         <DeleteIcon className="delete" />
